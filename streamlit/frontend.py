@@ -3,6 +3,8 @@ import numpy as np
 import requests
 import cv2
 
+st.set_page_config(page_title="Corretor de Inclinação de Imagens - Visão Computacional AWS", layout="wide")
+
 def deskew_image_api(img: np.ndarray) -> np.ndarray:
     API_ENDPOINT = "https://0gd0qxmt28.execute-api.us-east-2.amazonaws.com/desenvolvimento"
     # Codifica a imagem para formato PNG em bytes
@@ -28,7 +30,22 @@ def convert_uploaded_file_to_cv2_image(uploaded_file):
     return img
 
 def main():
-    st.title("Aplicativo de Correção de Inclinação de Imagem")
+    st.title("Aplicativo de Correção de Inclinação")
+    
+    # Texto descritivo abaixo do título
+    st.write("""
+    Este aplicativo demonstra o uso da AWS para aplicações de visão computacional, 
+    abrangendo desde a configuração da conta AWS e AWS CLI, até a criação de uma função Lambda com Docker
+    para processamento de imagens, e finalmente a exposição dessa funcionalidade via API Gateway.
+    """)
+    
+    # Adiciona o informações na sidebar
+    st.sidebar.image("logo.png")
+    st.sidebar.write("Autor: Carlos Melo")
+    st.sidebar.write("Repositório: [GitHub](http://github.com/carlosfab/image-processing-api)")
+    st.sidebar.write("[Especialização em Visão Computacional](https://escola.sigmoidal.ai/especializacao-em-visao-computacional/)")
+
+    
     uploaded_file = st.file_uploader("Escolha uma imagem para corrigir", type=["png", "jpg", "jpeg"])
 
     if uploaded_file is not None:

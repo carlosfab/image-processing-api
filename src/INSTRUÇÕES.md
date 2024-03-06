@@ -84,5 +84,3 @@ Este documento descreve os passos necessários para preparar, criar e configurar
 Com esses passos, você configura uma API REST no Amazon API Gateway, cria um método POST para acionar sua função Lambda `deskewImage` e implanta a API para acesso público.
 
 ---
-
-Lembre-se de ajustar as configurações conforme necessário para atender às suas necessidades específicas, incluindo autenticação, autorização, limites de taxa e outras considerações de segurança e operacionais.
