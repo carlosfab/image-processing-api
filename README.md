@@ -1,6 +1,8 @@
-# API de Processamento de Imagens com AWS API Gateway e Lambda
+# API de Processamento de Imagens com AWS
 
 Este guia fornece instruções passo a passo sobre como criar e configurar uma API de processamento de imagens usando AWS API Gateway e Lambda com Python.
+
+![Banner](img/streamlit_app.gif)
 
 ## Pré-requisitos
 
@@ -65,4 +67,3 @@ aws sts get-caller-identity --query Account --output text
 ```
 
 Este comando retorna o ID da sua conta AWS, que é útil para várias operações na AWS
-
