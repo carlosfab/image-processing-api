@@ -1,4 +1,5 @@
 
+
 import json
 import cv2
 import base64
@@ -31,7 +32,7 @@ def encode_image_to_base64(
 
 def decode_base64_to_image(
         encoded_string: str,
-        img_path: str = "/tmp/decoded_img.png"  # Alterado para usar o diretório /tmp
+        img_path: str = "/tmp/decoded_img.png"
         ) -> np.ndarray:
     """
     Decodifica uma string Base64 para uma imagem e salva como arquivo, então lê a imagem do arquivo e retorna como um array da NumPy.
