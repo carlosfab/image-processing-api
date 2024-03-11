@@ -1,69 +1,70 @@
-# API de Processamento de Imagens com AWS
 
-Este guia fornece instruções passo a passo sobre como criar e configurar uma API de processamento de imagens usando AWS API Gateway e Lambda com Python.
+# Image Processing API with AWS
+
+This guide provides step-by-step instructions on how to create and configure an image processing API using AWS API Gateway and Lambda with Python.
 
 ![Banner](img/streamlit_app.gif)
 
-## Pré-requisitos
+## Prerequisites
 
-Antes de começar, certifique-se de que você tem tudo o que é necessário:
+Before you begin, make sure you have everything you need:
 
-- **Pyenv** - Ferramenta para gerenciar múltiplas versões do Python. A versão recomendada do Python para este projeto é a `3.11.3`. Para instalar o Pyenv, siga as [Instruções oficiais de instalação do Pyenv](https://github.com/pyenv/pyenv#installation).
+- **Pyenv** - A tool for managing multiple versions of Python. The recommended version of Python for this project is `3.11.3`. To install Pyenv, follow the [Official Pyenv Installation Instructions](https://github.com/pyenv/pyenv#installation).
 
-- **Poetry** - Ferramenta de gerenciamento de dependências em Python. Para instalar o Poetry, siga as [Instruções oficiais de instalação do Poetry](https://python-poetry.org/docs/#installation).
+- **Poetry** - A Python dependency management tool. To install Poetry, follow the [Official Poetry Installation Instructions](https://python-poetry.org/docs/#installation).
 
-- **Docker** - É necessário para criar um ambiente isolado que simula uma função Lambda para testes locais. Para instalar o Docker, siga as instruções em [Install Docker](https://docs.docker.com/). Após a instalação, você pode verificar se o Docker está rodando com o comando `docker ps`.
+- **Docker** - Required for creating an isolated environment that simulates a Lambda function for local testing. To install Docker, follow the instructions at [Install Docker](https://docs.docker.com/). After installation, you can verify if Docker is running with the command `docker ps`.
 
-## Instalação e Configuração
+## Installation and Configuration
 
-Aqui estão os passos que você precisa seguir para configurar o seu ambiente de desenvolvimento:
+Here are the steps you need to follow to set up your development environment:
 
-1. Clonar o [Repositório Github](https://github.com/carlosfab/image-processing-api) para a sua máquina local e acessar a pasta `image-processing-api`:
+1. Clone the [Github Repository](https://github.com/carlosfab/image-processing-api) on the `versao-portugues` branch to your local machine and access the `image-processing-api` folder:
 
    ```bash
-   git clone https://github.com/carlosfab/image-processing-api
+   git clone -b versao-portugues https://github.com/carlosfab/image-processing-api.git
    cd image-processing-api
    ```
 
-2. Configurar o Poetry para criar ambientes virtuais dentro do diretório do projeto.
+2. Configure Poetry to create virtual environments within the project directory.
 
    ```bash
    poetry config virtualenvs.in-project true
    ```
 
-3. Configurar a versão `3.11.3` do Python com Pyenv:
+3. Set up the `3.11.3` version of Python with Pyenv:
 
    ```bash
    pyenv install 3.11.3
    pyenv local 3.11.3
    ```
 
-4. Instalar as dependências do projeto:
+4. Install project dependencies:
 
    ```bash
    poetry install
    ```
 
-5. Ativar o ambiente virtual.
+5. Activate the virtual environment.
 
    ```bash
    poetry shell
    ```
 
-## Configurar AWS
+## Configuring AWS
 
-Se ainda não possui conta na AWS, crie uma conta na AWS para poder utilizar os serviços AWS API Gateway e Lambda. Instalar e Configurar AWS CLI, A AWS CLI é uma ferramenta de linha de comando para gerenciar os serviços da AWS. Siga as [instruções oficiais para instalar a AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+If you do not already have an AWS account, create an AWS account to be able to use AWS API Gateway and Lambda services. Install and Configure AWS CLI, The AWS CLI is a command-line tool for managing AWS services. Follow the [official instructions to install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-Após a instalação, [configure a AWS CLI com suas credenciais](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) executando:
+After installation, [configure the AWS CLI with your credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) by running:
 
 ```bash
 aws configure
 ```
 
-Depois de configurar a AWS CLI, você pode obter o ID da sua conta AWS executando o seguinte comando:
+After configuring the AWS CLI, you can obtain your AWS account ID by running the following command:
 
 ```bash
 aws sts get-caller-identity --query Account --output text
 ```
 
-Este comando retorna o ID da sua conta AWS, que é útil para várias operações na AWS
+This command returns your AWS account ID, which is useful for various operations on AWS
