@@ -18,10 +18,10 @@ Antes de começar, certifique-se de que você tem tudo o que é necessário:
 
 Aqui estão os passos que você precisa seguir para configurar o seu ambiente de desenvolvimento:
 
-1. Clonar o [Repositório Github](https://github.com/carlosfab/image-processing-api) para a sua máquina local e acessar a pasta `image-processing-api`:
+1. Clonar o [Repositório Github](https://github.com/carlosfab/image-processing-api) no *branch* `versao-portugues` para a sua máquina local e acessar a pasta `image-processing-api`:
 
    ```bash
-   git clone https://github.com/carlosfab/image-processing-api
+   git clone -b versao-portugues https://github.com/carlosfab/image-processing-api.git
    cd image-processing-api
    ```
 
